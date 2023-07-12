@@ -10,12 +10,12 @@ export const Header = () => {
     'Formação',
     'Experiências'
   ]
-  const navBarDivsClassName = 'hidden lg:flex lg:flex-1'
+  const navBarDivsClassName = 'hidden lg:flex flex-grow';
   return (
     <div>
       <div>
         <header id='header' className="bg-orange shadow-md pb-2">
-          <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <nav className="mx-auto flex flex-col max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div className={`${navBarDivsClassName} lg:justify-start`}>
               {
                 arrayBtnsLeft.map((botao, index) => {
