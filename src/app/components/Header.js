@@ -3,7 +3,7 @@ import { HomeIcon, MoonIcon, SunIcon } from "@heroicons/react/solid";
 export const Header = ({ darkMode, toggleTheme }) => {
   const arrayBtnsLeft = [
     <HomeIcon className="w-6 h-6" />,
-    darkMode ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />,
+    darkMode ? <MoonIcon className="w-6 h-6" /> : <SunIcon className="w-6 h-6" />,
   ];
 
   const arrayBtnsRight = ["Projetos", "Formação", "Experiências"];
