@@ -4,15 +4,11 @@ import { Header } from "@/app/components/Header";
 import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const toggleTheme = () => {
     setDarkMode(!darkMode);
   };
-
-  useEffect(() => {
-    setDarkMode(true);
-  }, []);
 
   return (
     <main className={darkMode ? "dark" : ""}>
