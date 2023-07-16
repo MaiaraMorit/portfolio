@@ -1,9 +1,17 @@
-import { HomeIcon, MoonIcon, SunIcon } from "@heroicons/react/solid";
+"use client"
 
-export const Header = ({ darkMode, toggleTheme }) => {
+import { HomeIcon, MoonIcon, SunIcon } from "@heroicons/react/solid";
+import ThemeIcon from "@/app/components/ThemeIcon";
+import StateContext from "../../../utils/StateContext";
+import {useContext} from "react";
+
+export const Header = () => {
+  const { sharedState, updateSharedState } = useContext(StateContext);
+  const darkMode = sharedState.theme === 'dark';
+
   const arrayBtnsLeft = [
     <HomeIcon className="w-5 h-5 sm:w-6 sm:h-6 2xl:w-8 2xl:h-8" />,
-    darkMode ? <MoonIcon className="w-5 h-5 sm:w-6 sm:h-6 2xl:w-8 2xl:h-8" onClick={toggleTheme} /> : <SunIcon className="w-5 h-5 sm:w-6 sm:h-6 2xl:w-8 2xl:h-8" onClick={toggleTheme} />,
+    <ThemeIcon />,
   ];
 
   const arrayBtnsRight = ["Projetos", "Formação", "Experiências"];

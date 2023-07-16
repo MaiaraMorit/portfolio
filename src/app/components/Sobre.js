@@ -1,6 +1,12 @@
-import Image from 'next/image';
+"use client"
 
-export const Sobre = ({ darkMode }) => {
+import Image from 'next/image';
+import StateContext from "../../../utils/StateContext";
+import {useContext} from "react";
+
+export const Sobre = () => {
+  const { sharedState, updateSharedState } = useContext(StateContext);
+  const darkMode = sharedState.theme === 'dark';
   return (
     <div>
       <div className="pr-2 pt-2 flex justify-end">
