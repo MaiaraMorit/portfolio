@@ -1,10 +1,12 @@
 "use client"
 
 import React, { useState } from 'react';
+import {getCookie} from "./cookies";
 
 const StateContext = React.createContext();
 
 export const StateProvider = ({ children }) => {
+
   const [sharedState, setSharedState] = useState({
     theme: 'dark',
   });
