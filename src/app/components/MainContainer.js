@@ -8,7 +8,7 @@ export default function MainContainer({ children }) {
   const darkMode = sharedState.theme === 'dark';
 
   return (
-    <main className={darkMode ? "dark bg-gray-800" : ""}>
+    <main className={`min-h-screen overflow-y-scroll ${darkMode ? "dark bg-gray-800" : ""}`}>
       {children}
     </main>
   )

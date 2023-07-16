@@ -36,8 +36,8 @@
   /*  rgb(var(--background-start-rgb));*/
 }
 
-main {
-  height: 100vh;
+body {
+  overflow: hidden;
 }
 
 button {
