@@ -2,6 +2,7 @@
 
 import { Header } from "@/app/components/Header";
 import { useState, useEffect } from "react";
+import {Sobre} from "@/app/components/Sobre";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -11,10 +12,9 @@ export default function Home() {
   };
 
   return (
-    <main className={darkMode ? "dark" : ""}>
+    <main className={darkMode ? "dark bg-gray-800" : ""}>
       <Header darkMode={darkMode} toggleTheme={toggleTheme} />
-      <div className="flex flex-grow min-h-screen mt-0 dark:bg-gray-800" />
+      <Sobre darkMode={darkMode} />
     </main>
   );
 }
-

@@ -2,44 +2,43 @@ import { HomeIcon, MoonIcon, SunIcon } from "@heroicons/react/solid";
 
 export const Header = ({ darkMode, toggleTheme }) => {
   const arrayBtnsLeft = [
-    <HomeIcon className="w-6 h-6" />,
-    darkMode ? <MoonIcon className="w-6 h-6" /> : <SunIcon className="w-6 h-6" />,
+    <HomeIcon className="w-5 h-5 sm:w-6 sm:h-6 2xl:w-8 2xl:h-8" />,
+    darkMode ? <MoonIcon className="w-5 h-5 sm:w-6 sm:h-6 2xl:w-8 2xl:h-8" onClick={toggleTheme} /> : <SunIcon className="w-5 h-5 sm:w-6 sm:h-6 2xl:w-8 2xl:h-8" onClick={toggleTheme} />,
   ];
 
   const arrayBtnsRight = ["Projetos", "Formação", "Experiências"];
-
-  const navBarDivsClassName = "lg:flex lg:flex-1";
 
   return (
     <div>
       <header
         id="header"
-        className={`bg-orange shadow-md pb-2 ${darkMode ? "dark bg-gray-800" : ""}`}
+        className={`shadow-md`}
       >
         <nav
-          className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+          className="flex justify-between p-2 sm:p-6 2xl:px-24"
           aria-label="Global"
         >
-          <div className={`${navBarDivsClassName} lg:justify-start flex items-center space-x-2`}>
+          <div className={`items-center sm:space-x-2 2xl:space-x-6`}>
             {arrayBtnsLeft.map((botao, index) => (
               <div
                 key={`header-btns-left-${index}`}
-                className={`cursor-pointer inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white ${
-                  darkMode ? "dark:text-white" : ""
+                className={`cursor-pointer inline-flex rounded-md p-2 text-gray-400 hover:bg-gray-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white ${
+                  darkMode ? "dark:text-white" : "text-gray-500"
                 }`}
                 aria-controls="mobile-menu"
                 aria-expanded="false"
-                onClick={toggleTheme}
               >
                 {botao}
               </div>
             ))}
           </div>
-          <div className={`${navBarDivsClassName}  lg:justify-end flex items-center space-x-0.2`}>
+          <div className={`items-center sm:space-x-2 2xl:space-x-8`}>
             {arrayBtnsRight.map((botao, index) => (
               <div
                 key={`header-btns-right-${index}`}
-                className={`cursor-pointer inline-flex items-center justify-center rounded-md p-3 text-sm text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white ${index === arrayBtnsRight.length - 1 ? 'mr-1' : ''}`}
+                className={`text-sm sm:text-base 2xl:text-lg cursor-pointer inline-flex rounded-md p-2 text-gray-400 hover:bg-gray-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white ${
+                  darkMode ? "dark:text-white" : "text-gray-600"
+                }`}
                 aria-controls="mobile-menu"
                 aria-expanded="false"
               >
