@@ -1,10 +1,10 @@
 "use client"
 
 import StateContext from "../../../utils/StateContext";
-import {useContext} from "react";
+import { useContext } from "react";
 
 export default function MainContainer({ children }) {
-  const { sharedState, updateSharedState } = useContext(StateContext);
+  const { sharedState } = useContext(StateContext);
   const darkMode = sharedState.theme === 'dark';
 
   return (

@@ -1,12 +1,12 @@
 "use client"
 
-import { HomeIcon, MoonIcon, SunIcon } from "@heroicons/react/solid";
+import { HomeIcon } from "@heroicons/react/solid";
 import ThemeIcon from "@/app/components/ThemeIcon";
 import StateContext from "../../../utils/StateContext";
 import {useContext} from "react";
 
 export const Header = () => {
-  const { sharedState, updateSharedState } = useContext(StateContext);
+  const { sharedState } = useContext(StateContext);
   const darkMode = sharedState.theme === 'dark';
 
   const arrayBtnsLeft = [

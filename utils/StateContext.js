@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState } from 'react';
-import {getCookie} from "./cookies";
 
 const StateContext = React.createContext();
 

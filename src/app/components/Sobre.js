@@ -5,7 +5,7 @@ import StateContext from "../../../utils/StateContext";
 import {useContext} from "react";
 
 export const Sobre = () => {
-  const { sharedState, updateSharedState } = useContext(StateContext);
+  const { sharedState } = useContext(StateContext);
   const darkMode = sharedState.theme === 'dark';
   return (
     <div>
@@ -34,33 +34,30 @@ export const Sobre = () => {
         </button>
       </div>
 
-      {/*<div className="-mt-20 pt-4 flex justify-center">*/}
-      {/*  <Image*/}
-      {/*    src="/Maiara Morit.png"*/}
-      {/*    alt=""*/}
-      {/*    width={250}*/}
-      {/*    height={170}*/}
-      {/*  />*/}
-      {/*</div>*/}
+      <div className="-mt-20 pt-4 flex justify-center">
+      <Image
+        src="/MaiaraMorit.png"
+        alt="Maiara Morit"
+        width={250}
+        height={170}
+     />
+     </div>
 
-      {/*<div className="w-screen px-60">*/}
-      {/*  <div className="mt-[-20px]">*/}
-      {/*    <h1 className="text-3xl font-bold tracking-tight sm:text-5xl flex justify-center m-4 mt-0 relative top-[-10px]">*/}
-      {/*          <span style={{backgroundImage: 'linear-gradient(to right, #5DE0E6, #092E60)',*/}
-      {/*            WebkitBackgroundClip: 'text',*/}
-      {/*            WebkitTextFillColor: 'transparent',*/}
-      {/*            textShadow: '0 0 2px rgba(0, 0, 0, 0.2)'}}>*/}
-      {/*          Maiara Morit*/}
-      {/*          </span>*/}
-      {/*    </h1>*/}
-      {/*  </div>*/}
-      {/*  <div className="text-justify" style={{paddingLeft:250, width:1000 }}>*/}
-      {/*    <p>*/}
-      {/*      Olá, sou Maiara e tenho 28 anos. Formada em jornalismo desde 2020, tive a oportunidade de estagiar e trabalhar na área através de um canal chamado Rede Internacional de Televisão (RIT), Após meu estágio, decidi explorar o campo do marketing digital e planejamento de mídias. Trabalhei em uma loja chamada Dupla do Cabelo, onde assumi a responsabilidade de criar o setor de marketing e e-commerce do zero. Durante esse período, fui capaz de utilizar minhas habilidades de comunicação para transformar o produto em entretenimento, o que resultou em um crescimento significativo nas mídias sociais da empresa. Além disso, tive a oportunidade de liderar uma equipe que se expandiu ao longo do tempo.*/}
-      {/*      Atualmente, estou em transição para a área de Desenvolvimento Web junto a Trybe, pois reconheço o seu potencial para combinar minha paixão pela tecnologia com minha habilidade de comunicação. Estou empenhada em adquirir as habilidades técnicas necessárias para me tornar uma desenvolvedora web competente e estou dedicando meu tempo ao aprendizado de linguagens de programação, frameworks e ferramentas relevantes.*/}
-      {/*    </p>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
+      <div className="w-screen flex flex-col items-center">
+               <span className="text-3xl sm:text-4xl font-bold pt-8" style={{backgroundImage: 'linear-gradient(to right, #5DE0E6, #2F628F)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                textShadow: '0 0 2px rgba(0, 0, 0, 0.2)'}}>
+                Maiara Morit
+               </span>
+      <div className= {`text-sm text-justify pl-10 pr-10 p-2 sm:text-base sm:pl-96 sm:pr-96 md:pl-20 md:pr-20 items-center border-solid border-4 border-indigo-500 ${
+            darkMode ? "dark:text-gray-400" : "text-gray-700"
+          }`}>
+          <p>
+          Sou uma desenvolvedora de software júnior apaixonada por tecnologia e suas inovações. Tenho experiência comprovada em marketing digital, onde obtive sucesso ao impulsionar o número de seguidores da loja Dupla do Cabelo de 8 mil para 190 mil seguidores no instagram. Agora, busco aplicar essa experiência no desenvolvimento fullstack, utilizando minhas habilidades de transformar produtos em entretenimento tendo a perspectiva do cliente. Acredito que a comunicação e a diversidade são fatores-chave para impulsionar a inovação e encontrar soluções criativas para problemas.
+        </p>
+       </div>
+     </div>
 
       {/*<div className="flex justify-center m-4 mt-0 relative top-[-10px]" style={{paddingTop:50,}}>*/}
       {/*  <button*/}
