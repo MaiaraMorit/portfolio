@@ -7,6 +7,34 @@ import {useContext} from "react";
 export const Sobre = () => {
   const { sharedState } = useContext(StateContext);
   const darkMode = sharedState.theme === 'dark';
+
+  const arrayBtns = ["GitHub", "LinkeIn", "Instagram", "Currículo"];
+
+  const handleClick = (btn) => {
+    if (btn === "GitHub") {
+      window.open('https://github.com/maiaramorit', '_blank');
+    } else if (btn === "LinkeIn") {
+      window.open('https://linkedin.com/in/maiaramorit/', '_blank');
+    } else if (btn === "Instagram") {
+      window.open('https://www.instagram.com/maiaramorit/', '_blank');
+    } else if (btn === "Currículo") {
+      window.open('https://drive.google.com/file/d/1nhw7P9WpcLKCTNxUWndM1pzoeb4Am0KM/view?usp=sharing', '_blank');
+    }
+  };
+
+  const hardSkills = [
+    <Image src="/docker.png" alt="docker" layout="fill" objectFit="contain"/>,
+    <Image src="/insomnia.png" alt="insomnia" layout="fill" objectFit="contain"/>,
+    <Image src="/javascript.png" alt="JS" layout="fill" objectFit="contain"/>,
+    <Image src="/React.png" alt="React" layout="fill" objectFit="contain"/>,
+    <Image src="/nodejs-logo.png" alt="nodeJs" layout="fill" objectFit="contain"/>,
+    <Image src="/next.svg" alt="next" layout="fill" objectFit="contain"/>,
+    <Image src="/redux.png" alt="redux" layout="fill" objectFit="contain"/>,
+    <Image src="/java.png" alt="java" layout="fill" objectFit="contain"/>,
+    <Image src="/vercel.svg" alt="vercel" layout="fill" objectFit="contain"/>,
+    <Image src="/mysql.png" alt="mysql" layout="fill" objectFit="contain"/>,
+  ];
+
   return (
     <div>
       <div className="pr-2 pt-2 flex justify-end">
@@ -34,7 +62,7 @@ export const Sobre = () => {
         </button>
       </div>
 
-      <div className="-mt-20 pt-4 flex justify-center">
+      <div className="-mt-20 pt-10 flex justify-center">
       <Image
         src="/MaiaraMorit.png"
         alt="Maiara Morit"
@@ -43,14 +71,16 @@ export const Sobre = () => {
      />
      </div>
 
-      <div className="w-screen flex flex-col items-center">
-               <span className="text-3xl sm:text-4xl font-bold pt-8" style={{backgroundImage: 'linear-gradient(to right, #5DE0E6, #2F628F)',
+      <div className="min-w-screen flex flex-col items-center">
+               <span className="text-3xl sm:text-4xl font-bold pt-8" 
+                style={{backgroundImage: 'linear-gradient(to right, #5DE0E6, #2F628F)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                textShadow: '0 0 2px rgba(0, 0, 0, 0.2)'}}>
+                textShadow: '0 0 2px rgba(0, 0, 0, 0.2)'}}
+                >
                 Maiara Morit
                </span>
-      <div className= {`text-sm text-justify pl-10 pr-10 p-2 sm:text-base sm:pl-96 sm:pr-96 md:pl-20 md:pr-20 items-center border-solid border-4 border-indigo-500 ${
+      <div className= {`text-sm text-justify items-center pl-20 pr-20 p-2 sm:text-base sm:pl-96 sm:pr-96 md:pl-40 md:pr-40 lg:pl-60 lg:pr-60 xl:pl-60 xl:pr-60 border-solid boder-4 border-red-500 ${
             darkMode ? "dark:text-gray-400" : "text-gray-700"
           }`}>
           <p>
@@ -59,38 +89,34 @@ export const Sobre = () => {
        </div>
      </div>
 
-      {/*<div className="flex justify-center m-4 mt-0 relative top-[-10px]" style={{paddingTop:50,}}>*/}
-      {/*  <button*/}
-      {/*    type="button"*/}
-      {/*    className="inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"*/}
-      {/*    aria-controls="mobile-menu"*/}
-      {/*    aria-expanded="false"*/}
-      {/*    onClick={() => window.open('https://github.com/maiaramorit', '_blank')}*/}
-      {/*  >*/}
-      {/*    GitHub*/}
-      {/*  </button>*/}
+     <div className="flex justify-center">
+          {
+            arrayBtns.map((btn, index) => (
+              <button
+                key={`info-btn-${index}`}
+                type="button"
+                className={`cursor-pointer inline-flex rounded-md p-2 text-gray-400 hover:bg-gray-600 hover:text-white focus:outline-none focus:ring-1 focus:ring-inset focus:ring-white ${
+                  darkMode ? "dark:text-white" : "text-gray-500"
+                }`}
+                onClick={() => handleClick(btn)}
+                >{btn}</button>
+            ))
+          }
+    </div>
 
-      {/*  <button*/}
-      {/*    type="button"*/}
-      {/*    className="inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"*/}
-      {/*    aria-controls="mobile-menu"*/}
-      {/*    aria-expanded="false"*/}
-      {/*    onClick={() => window.open('https://linkedin.com/in/maiaramorit/', '_blank')}*/}
-      {/*  >*/}
-      {/*    LinkeIn*/}
-      {/*  </button>*/}
-
-
-      {/*  <button*/}
-      {/*    type="button"*/}
-      {/*    className="inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"*/}
-      {/*    aria-controls="mobile-menu"*/}
-      {/*    aria-expanded="false"*/}
-      {/*    onClick={() => window.open('https://www.instagram.com/maiaramorit/', '_blank')}*/}
-      {/*  >*/}
-      {/*    Instagram*/}
-      {/*  </button>*/}
-      {/*</div>*/}
+    <div className=
+    {`min-w-screen flex flex-col items-center pt-12 ${ darkMode ? "dark:text-gray-400" : "text-gray-500"}`}>
+      Hard skills 
+        <div className='min-w-screen flex p-5 space-x-5'>
+          {
+             hardSkills.map((skill, index) => (
+              <div key={`skill-${index}`} className="relative sm:w-10 sm:h-10">
+                {skill}
+              </div>
+            ))
+          }
+        </div>    
+    </div>
     </div>
   )
 }
