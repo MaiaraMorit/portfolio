@@ -4,7 +4,6 @@ import { HomeIcon } from "@heroicons/react/solid";
 import ThemeIcon from "@/app/components/ThemeIcon";
 import StateContext from "../../../utils/StateContext";
 import {useContext} from "react";
-
 export const Header = () => {
   const { sharedState } = useContext(StateContext);
   const darkMode = sharedState.theme === 'dark';
@@ -15,6 +14,17 @@ export const Header = () => {
   ];
 
   const arrayBtnsRight = ["Projetos", "Formação", "Experiências"];
+
+  const handleClick = (botao) => {
+    if (botao === "Projetos") {
+      // projetosRef.current.scrollIntoView({ behavior: "smooth" });
+      console.log("Projetos");
+    } else if (botao === "Formação") {
+      console.log("Formação");
+    } else if (botao === "Experiências") {
+      console.log("Experiências");
+    }
+  };
 
   return (
     <div>
@@ -42,16 +52,15 @@ export const Header = () => {
           </div>
           <div className={`items-center sm:space-x-2 2xl:space-x-8`}>
             {arrayBtnsRight.map((botao, index) => (
-              <div
+               <button
                 key={`header-btns-right-${index}`}
                 className={`text-sm sm:text-base 2xl:text-lg cursor-pointer inline-flex rounded-md p-2 text-gray-400 hover:bg-gray-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white ${
                   darkMode ? "dark:text-white" : "text-gray-600"
                 }`}
-                aria-controls="mobile-menu"
-                aria-expanded="false"
+                onClick={() => handleClick(botao)}
               >
                 {botao}
-              </div>
+              </button>
             ))}
           </div>
         </nav>

@@ -1,8 +1,9 @@
 "use client"
 
+import React from "react";
 import Image from 'next/image';
 import StateContext from "../../../utils/StateContext";
-import {useContext} from "react";
+import { useContext } from "react";
 
 export const Sobre = () => {
   const { sharedState } = useContext(StateContext);
@@ -24,19 +25,20 @@ export const Sobre = () => {
 
   const hardSkills = [
     <Image src="/docker.png" alt="docker" layout="fill" objectFit="contain"/>,
-    <Image src="/insomnia.png" alt="insomnia" layout="fill" objectFit="contain"/>,
-    <Image src="/javascript.png" alt="JS" layout="fill" objectFit="contain"/>,
     <Image src="/React.png" alt="React" layout="fill" objectFit="contain"/>,
+    <Image src="/javascript.png" alt="JS" layout="fill" objectFit="contain"/>,
     <Image src="/nodejs-logo.png" alt="nodeJs" layout="fill" objectFit="contain"/>,
-    <Image src="/next.svg" alt="next" layout="fill" objectFit="contain"/>,
+    <Image src="/insomnia.png" alt="insomnia" layout="fill" objectFit="contain"/>,
     <Image src="/redux.png" alt="redux" layout="fill" objectFit="contain"/>,
     <Image src="/java.png" alt="java" layout="fill" objectFit="contain"/>,
-    <Image src="/vercel.svg" alt="vercel" layout="fill" objectFit="contain"/>,
     <Image src="/mysql.png" alt="mysql" layout="fill" objectFit="contain"/>,
+    <Image src="/next.svg" alt="next" layout="fill" objectFit="contain"/>,
+    <Image src="/vercel.svg" alt="vercel" layout="fill" objectFit="contain"/>,
   ];
 
+
   return (
-    <div>
+    <div style={{ overflowY: 'auto', maxHeight: '90vh' }}>
       <div className="pr-2 pt-2 flex justify-end">
         <button
           type="button"
@@ -80,7 +82,7 @@ export const Sobre = () => {
                 >
                 Maiara Morit
                </span>
-      <div className= {`text-sm text-justify items-center pl-20 pr-20 p-2 sm:text-base sm:pl-96 sm:pr-96 md:pl-40 md:pr-40 lg:pl-60 lg:pr-60 xl:pl-60 xl:pr-60 border-solid boder-4 border-red-500 ${
+      <div className= {`text-sm text-justify items-center pl-20 pr-20 p-2 pl-20 sm:text-base sm:pl-82 sm:pr-82 md:pl-40 md:pr-40 lg:pl-60 lg:pr-60 xl:pl-60 xl:pr-60 ${
             darkMode ? "dark:text-gray-400" : "text-gray-700"
           }`}>
           <p>
@@ -105,12 +107,12 @@ export const Sobre = () => {
     </div>
 
     <div className=
-    {`min-w-screen flex flex-col items-center pt-12 ${ darkMode ? "dark:text-gray-400" : "text-gray-500"}`}>
+    {`min-w-screen flex flex-col items-center pt-10 ${ darkMode ? "dark:text-gray-400" : "text-gray-500"}`}>
       Hard skills 
-        <div className='min-w-screen flex p-5 space-x-5'>
-          {
+          <div className='min-w-screen pt-2 flex flex-row space-x-3'>
+           {
              hardSkills.map((skill, index) => (
-              <div key={`skill-${index}`} className="relative sm:w-10 sm:h-10">
+                 <div key={`skill-${index}`} className="relative w-8 h-8 sm:w-12 sm:h-12 md:w-22 md:h-22 xl:w-42 xl:h-42">
                 {skill}
               </div>
             ))
@@ -120,3 +122,5 @@ export const Sobre = () => {
     </div>
   )
 }
+
+// criar uma parte que leva para os meus projetos pessoais, com imagens e link do github daquela projeto e um link dele deployado, nesta pagina um vídeo do youtube onde eu me apresento e falo sobre mim. na parte de formação do botão eu quero abrir um pop-up com essas infos e imagem minha na facul e curso trybe e na parte de experiências quero imagens da duppla do cabelo também utilizando o carrossel. um poup-up

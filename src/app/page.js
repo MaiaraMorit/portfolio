@@ -1,5 +1,6 @@
 import { Header } from "@/app/components/Header";
-import {Sobre} from "@/app/components/Sobre";
+import { Sobre } from "@/app/components/Sobre";
+import { Projetos } from "@/app/components/Projetos";
 import MainContainer from "@/app/components/MainContainer";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <MainContainer>
       <Header />
       <Sobre />
+      <Projetos />
     </MainContainer>
   );
 }
