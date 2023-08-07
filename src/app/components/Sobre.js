@@ -4,6 +4,8 @@ import React from "react";
 import Image from 'next/image';
 import StateContext from "../../../utils/StateContext";
 import { useContext } from "react";
+import { GrReactjs } from'react-icons/gr';
+import { SiRedux, SiTestinglibrary, SiJavascript } from 'react-icons/si';
 
 export const Sobre = () => {
   const { sharedState } = useContext(StateContext);
@@ -23,22 +25,8 @@ export const Sobre = () => {
     }
   };
 
-  const hardSkills = [
-    <Image src="/docker.png" alt="docker" layout="fill" objectFit="contain"/>,
-    <Image src="/React.png" alt="React" layout="fill" objectFit="contain"/>,
-    <Image src="/javascript.png" alt="JS" layout="fill" objectFit="contain"/>,
-    <Image src="/nodejs-logo.png" alt="nodeJs" layout="fill" objectFit="contain"/>,
-    <Image src="/insomnia.png" alt="insomnia" layout="fill" objectFit="contain"/>,
-    <Image src="/redux.png" alt="redux" layout="fill" objectFit="contain"/>,
-    <Image src="/java.png" alt="java" layout="fill" objectFit="contain"/>,
-    <Image src="/mysql.png" alt="mysql" layout="fill" objectFit="contain"/>,
-    <Image src="/next.svg" alt="next" layout="fill" objectFit="contain"/>,
-    <Image src="/vercel.svg" alt="vercel" layout="fill" objectFit="contain"/>,
-  ];
-
-
   return (
-    <div style={{ overflowY: 'auto', maxHeight: '90vh' }}>
+    <div>
       <div className="pr-2 pt-2 flex justify-end">
         <button
           type="button"
@@ -73,15 +61,12 @@ export const Sobre = () => {
      />
      </div>
 
-      <div className="min-w-screen flex flex-col items-center">
-               <span className="text-3xl sm:text-4xl font-bold pt-8" 
-                style={{backgroundImage: 'linear-gradient(to right, #5DE0E6, #2F628F)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                textShadow: '0 0 2px rgba(0, 0, 0, 0.2)'}}
+      <div className="flex flex-col items-center">
+        <p className="pt-8 text-gray-500">Olá, me chamo</p>
+               <h1 className="text-3xl sm:text-4xl font-bold text-customCyan " 
                 >
                 Maiara Morit
-               </span>
+               </h1>
       <div className= {`text-sm text-justify items-center pl-20 pr-20 p-2 pl-20 sm:text-base sm:pl-82 sm:pr-82 md:pl-40 md:pr-40 lg:pl-60 lg:pr-60 xl:pl-60 xl:pr-60 ${
             darkMode ? "dark:text-gray-400" : "text-gray-700"
           }`}>
@@ -106,21 +91,53 @@ export const Sobre = () => {
           }
     </div>
 
-    <div className=
-    {`min-w-screen flex flex-col items-center pt-10 ${ darkMode ? "dark:text-gray-400" : "text-gray-500"}`}>
-      Hard skills 
-          <div className='min-w-screen pt-2 flex flex-row space-x-3'>
-           {
-             hardSkills.map((skill, index) => (
-                 <div key={`skill-${index}`} className="relative w-8 h-8 sm:w-12 sm:h-12 md:w-22 md:h-22 xl:w-42 xl:h-42">
-                {skill}
-              </div>
-            ))
-          }
-        </div>    
+    <div className={`min-w-screen flex flex-col items-center pt-10 flex flex-row ${darkMode ? "dark:text-gray-400" : "text-gray-500"}`}>
+      <p className="text-customCyan font-bold text-3xl">Skills</p>
+      <p>minhas habilidades</p>
+      <div className="flex flex-row gap-x-20 pt-5" >
+          <div className="flex flex-col p-5 bg-cyan-800/30 text-cyan-400 hover:bg-transparent border border-solid border-2 border-cyan-800/20 hover:border-cyan-800 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-white rounded">Front-End
+         
+          <div className="flex flex-row flex-wrap text-white">
+            <div className="flex flex-row p-2 w-1/2"><GrReactjs className="text-customCyan w-10 h-10"/>
+            <div className=" text-xs"><p className="text-white pl-1">React.js</p> <p className="text-gray-400 pl-1">Intermediário</p></div>
+            </div>
+
+            <div className="flex flex-row p-2 w-1/2"><SiJavascript className="text-customCyan w-10 h-10"/>
+            <div className=" text-xs"><p className="text-white pl-1">Javascript</p> <p className="text-gray-400 pl-1">Avançado</p></div>
+            </div>
+
+            <div className="flex flex-row p-2 w-1/2"><SiRedux className="text-customCyan w-10 h-10"/>
+            <div className=" text-xs"><p className="text-white pl-1">Redux</p> <p className="text-gray-400 pl-1">Avançado</p></div>
+            </div>
+            <div className="flex flex-row p-2 w-1/2"><SiTestinglibrary className="text-customCyan w-10 h-10"/>
+            <div className=" text-xs"><p className="text-white pl-1">React Testing Library</p> <p className="text-gray-400 pl-1">Avançado</p></div>
+            </div>
+          </div>
+          
+
+          </div>
+          <div className="flex flex-col p-5 bg-cyan-800/30 text-cyan-400 hover:bg-transparent border border-solid border-2 border-cyan-800/20 hover:border-cyan-800 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-white rounded">Back-End
+         
+          <div className="flex flex-row flex-wrap text-white">
+            <div className="flex flex-row p-2 w-1/2"><GrReactjs className="text-customCyan w-10 h-10"/>
+            <div className=" text-xs"><p className="text-white pl-1">React.js</p> <p className="text-gray-400 pl-1">Intermediário</p></div>
+            </div>
+
+            <div className="flex flex-row p-2 w-1/2"><SiJavascript className="text-customCyan w-10 h-10"/>
+            <div className=" text-xs"><p className="text-white pl-1">Javascript</p> <p className="text-gray-400 pl-1">Avançado</p></div>
+            </div>
+
+            <div className="flex flex-row p-2 w-1/2"><SiRedux className="text-customCyan w-10 h-10"/>
+            <div className=" text-xs"><p className="text-white pl-1">Redux</p> <p className="text-gray-400 pl-1">Avançado</p></div>
+            </div>
+            <div className="flex flex-row p-2 w-1/2"><SiTestinglibrary className="text-customCyan w-10 h-10"/>
+            <div className=" text-xs"><p className="text-white pl-1">React Testing Library</p> <p className="text-gray-400 pl-1">Avançado</p></div>
+            </div>
+          </div>
+
+          </div>
+      </div>        
     </div>
     </div>
   )
 }
-
-// criar uma parte que leva para os meus projetos pessoais, com imagens e link do github daquela projeto e um link dele deployado, nesta pagina um vídeo do youtube onde eu me apresento e falo sobre mim. na parte de formação do botão eu quero abrir um pop-up com essas infos e imagem minha na facul e curso trybe e na parte de experiências quero imagens da duppla do cabelo também utilizando o carrossel. um poup-up
