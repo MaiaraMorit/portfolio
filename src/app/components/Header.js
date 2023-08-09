@@ -3,7 +3,8 @@
 import { HomeIcon } from "@heroicons/react/solid";
 import ThemeIcon from "@/app/components/ThemeIcon";
 import StateContext from "../../../utils/StateContext";
-import {useContext} from "react";
+import { useContext, useRef } from "react";
+
 export const Header = () => {
   const { sharedState } = useContext(StateContext);
   const darkMode = sharedState.theme === 'dark';
@@ -15,10 +16,12 @@ export const Header = () => {
 
   const arrayBtnsRight = ["Projetos", "Formação", "Experiências"];
 
+  const projetosRef = useRef(null);
+
   const handleClick = (botao) => {
-    if (botao === "Projetos") {
-      // projetosRef.current.scrollIntoView({ behavior: "smooth" });
-      console.log("Projetos");
+    if (botao === "Projetos" && projetosRef.current) {
+      return projetosRef.current.scrollIntoView({ behavior: "smooth" });
+      
     } else if (botao === "Formação") {
       console.log("Formação");
     } else if (botao === "Experiências") {

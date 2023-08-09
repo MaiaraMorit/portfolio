@@ -5,10 +5,11 @@ import Image from 'next/image';
 import StateContext from "../../../utils/StateContext";
 import { useContext } from "react";
 import { GrReactjs, GrMysql, GrDocker } from'react-icons/gr';
-import { SiRedux, SiTestinglibrary, SiJavascript, SiJest, SiTailwindcss, SiVercel } from 'react-icons/si';
+import { SiRedux, SiTestinglibrary, SiJest, SiTailwindcss, SiVercel, SiTypescript, SiMocha, SiChai } from 'react-icons/si';
 import { IoLogoNodejs } from 'react-icons/io';
-import { BiLogoJava }  from 'react-icons/bi';
+import { BiLogoJava, BiLogoJavascript }  from 'react-icons/bi';
 import { TbBrandNextjs } from 'react-icons/tb';
+import { BsGit } from 'react-icons/bs';
 
 export const Sobre = () => {
   const { sharedState } = useContext(StateContext);
@@ -98,59 +99,73 @@ export const Sobre = () => {
       <p className="text-customCyan font-bold text-3xl">Skills</p>
       <p>minhas habilidades</p>
       <div className="flex flex-row flex-wrap w-4/5" >
-      <div className="flex flex-col p-5 m-2 items-center mx-auto w-[42vh] bg-cyan-800/30 text-cyan-400 hover:bg-transparent border border-solid border-2 border-cyan-800/20 hover:border-cyan-800 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-white rounded">
+      <div className={`flex flex-col p-5 m-2 items-center mx-auto w-[42vh] ${ darkMode ? "text-cyan-400 bg-cyan-800/30 hover:bg-transparent border border-solid border-2 border-cyan-800/20 hover:border-cyan-800 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-white rounded" : "font-medium text-cyan-700 bg-cyan-300/30 hover:bg-transparent border border-solid border-2 border-cyan-800/20 hover:border-cyan-800 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-white rounded"}`}>
             Front-End
          
           <div className="flex flex-row flex-wrap mx-auto p-5 w-[36vh] text-white">
             <div className="flex flex-row p-2 w-32 w-1/2"><GrReactjs className="text-customCyan w-10 h-10"/>
-            <div className=" text-xs"><p className="text-white pl-1">React.js</p> <p className="text-gray-400 pl-1">Intermediário</p></div>
+            <div className=" text-xs"><p className={`pl-1 ${darkMode ? "text-white" : "font-medium text-cyan-700"}`}>React.js</p> <p className="text-gray-400 pl-1">Intermediário</p></div>
             </div>
 
-            <div className="flex flex-row p-2 w-32 w-1/2"><SiJavascript className="text-customCyan w-10 h-10"/>
-            <div className=" text-xs"><p className="text-white pl-1">Javascript</p> <p className="text-gray-400 pl-1">Avançado</p></div>
+            <div className="flex flex-row p-2 w-32 w-1/2"><BiLogoJavascript className="text-customCyan w-10 h-10"/>
+            <div className=" text-xs"><p className={`pl-1 ${darkMode ? "text-white" : "font-medium text-cyan-700"}`}>Javascript</p> <p className="text-gray-400 pl-1">Avançado</p></div>
             </div>
 
             <div className="flex flex-row p-2 w-32 w-1/2"><SiRedux className="text-customCyan w-10 h-10"/>
-            <div className=" text-xs"><p className="text-white pl-1">Redux</p> <p className="text-gray-400 pl-1">Avançado</p></div>
+            <div className=" text-xs"><p className={`pl-1 ${darkMode ? "text-white" : "font-medium text-cyan-700"}`}>Redux</p> <p className="text-gray-400 pl-1">Avançado</p></div>
             </div>
             <div className="flex flex-row p-2 w-32 w-1/2"><SiTestinglibrary className="text-customCyan w-10 h-10"/>
-            <div className=" text-xs"><p className="text-white pl-1">React Testing Library</p> <p className="text-gray-400 pl-1">Avançado</p></div>
+            <div className=" text-xs"><p className={`pl-1 ${darkMode ? "text-white" : "font-medium text-cyan-700"}`}>React Testing Library</p> <p className="text-gray-400 pl-1">Avançado</p></div>
             </div>
 
             <div className="flex flex-row p-2 w-32 w-1/2"><SiJest className="text-customCyan w-10 h-10"/>
-            <div className=" text-xs"><p className="text-white pl-1">Jest</p> <p className="text-gray-400 pl-1">Avançado</p></div>
+            <div className=" text-xs"><p className={`pl-1 ${darkMode ? "text-white" : "font-medium text-cyan-700"}`}>Jest</p> <p className="text-gray-400 pl-1">Avançado</p></div>
             </div>
             <div className="flex flex-row p-2 w-32 w-1/2"><SiTailwindcss className="text-customCyan w-10 h-10"/>
-            <div className=" text-xs"><p className="text-white pl-1">Tailwindcss</p> <p className="text-gray-400 pl-1">Intermediário</p></div>
+            <div className=" text-xs"><p className={`pl-1 ${darkMode ? "text-white" : "font-medium text-cyan-700"}`}>Tailwindcss</p> <p className="text-gray-400 pl-1">Intermediário</p></div>
+            </div>
+
+            <div className="flex flex-row p-2 w-32 w-1/2"><BsGit className="text-customCyan w-10 h-10"/>
+            <div className=" text-xs"><p className={`pl-1 ${darkMode ? "text-white" : "font-medium text-cyan-700"}`}>Git</p> <p className="text-gray-400 pl-1">Avançado</p></div>
+            </div>
+            <div className="flex flex-row p-2 w-32 w-1/2"><SiTypescript className="text-customCyan w-10 h-10"/>
+            <div className=" text-xs"><p className={`pl-1 ${darkMode ? "text-white" : "font-medium text-cyan-700"}`}>SiTypescript</p> <p className="text-gray-400 pl-1">Iniciante</p></div>
             </div>
           </div>
           
 
           </div>
-          <div className="flex flex-col p-5 m-2 items-center mx-auto w-[42vh] bg-cyan-800/30 text-cyan-400 hover:bg-transparent border border-solid border-2 border-cyan-800/20 hover:border-cyan-800 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-white rounded">
+          <div className={`flex flex-col p-5 m-2 items-center mx-auto w-[42vh] ${ darkMode ? "text-cyan-400 bg-cyan-800/30 hover:bg-transparent border border-solid border-2 border-cyan-800/20 hover:border-cyan-800 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-white rounded" : "font-medium text-cyan-700 bg-cyan-300/30 hover:bg-transparent border border-solid border-2 border-cyan-800/20 hover:border-cyan-800 focus:outline-none focus:ring-1 focus:ring-inset focus:ring-white rounded"}`}>
             Back-End
          
           <div className="flex flex-row flex-wrap pt-2 w-[32vh] text-white">
             <div className="flex flex-row p-2 w-32 w-1/2"><IoLogoNodejs className="text-customCyan w-10 h-10"/>
-            <div className=" text-xs"><p className="text-white pl-1">Node.js</p> <p className="text-gray-400 pl-1">Avançado</p></div>
+            <div className=" text-xs"><p className={`pl-1 ${darkMode ? "text-white" : "font-medium text-cyan-700"}`}>Node.js</p> <p className="text-gray-400 pl-1">Avançado</p></div>
             </div>
 
             <div className="flex flex-row p-2 w-32 w-1/2"><GrMysql className="text-customCyan w-10 h-10"/>
-            <div className=" text-xs"><p className="text-white pl-1">MySQL</p> <p className="text-gray-400 pl-1">Intermediário</p></div>
+            <div className=" text-xs"><p className={`pl-1 ${darkMode ? "text-white" : "font-medium text-cyan-700"}`}>MySQL</p> <p className="text-gray-400 pl-1">Intermediário</p></div>
             </div>
 
             <div className="flex flex-row p-2 w-32 w-1/2"><BiLogoJava className="text-customCyan w-10 h-10"/>
-            <div className=" text-xs"><p className="text-white pl-1">Java</p> <p className="text-gray-400 pl-1">Iniciante</p></div>
+            <div className=" text-xs"><p className={`pl-1 ${darkMode ? "text-white" : "font-medium text-cyan-700"}`}>Java</p> <p className="text-gray-400 pl-1">Iniciante</p></div>
             </div>
             <div className="flex flex-row p-2 w-32 w-1/2"><TbBrandNextjs className="text-customCyan w-10 h-10"/>
-            <div className=" text-xs"><p className="text-white pl-1">Next.js</p> <p className="text-gray-400 pl-1">Intermediário</p></div>
+            <div className=" text-xs"><p className={`pl-1 ${darkMode ? "text-white" : "font-medium text-cyan-700"}`}>Next.js</p> <p className="text-gray-400 pl-1">Intermediário</p></div>
             </div>
 
             <div className="flex flex-row p-2 w-32 w-1/2"><SiVercel className="text-customCyan w-10 h-10"/>
-            <div className=" text-xs"><p className="text-white pl-1">Vercel</p> <p className="text-gray-400 pl-1">Iniciante</p></div>
+            <div className=" text-xs"><p className={`pl-1 ${darkMode ? "text-white" : "font-medium text-cyan-700"}`}>Vercel</p> <p className="text-gray-400 pl-1">Iniciante</p></div>
             </div>
             <div className="flex flex-row p-2 w-32 w-1/2"><GrDocker className="text-customCyan w-10 h-10"/>
-            <div className=" text-xs"><p className="text-white pl-1">Docker</p> <p className="text-gray-400 pl-1">Intermediário</p></div>
+            <div className=" text-xs"><p className={`pl-1 ${darkMode ? "text-white" : "font-medium text-cyan-700"}`}>Docker</p> <p className="text-gray-400 pl-1">Intermediário</p></div>
+            </div>
+
+            <div className="flex flex-row p-2 w-32 w-1/2"><SiMocha className="text-customCyan w-10 h-10"/>
+            <div className=" text-xs"><p className={`pl-1 ${darkMode ? "text-white" : "font-medium text-cyan-700"}`}>Mocha</p> <p className="text-gray-400 pl-1">Iniciante</p></div>
+            </div>
+            <div className="flex flex-row p-2 w-32 w-1/2"><SiChai className="text-customCyan w-10 h-10"/>
+            <div className=" text-xs"><p className={`pl-1 ${darkMode ? "text-white" : "font-medium text-cyan-700"}`}>Chai</p> <p className="text-gray-400 pl-1">Iniciante</p></div>
             </div>
           </div>
 
